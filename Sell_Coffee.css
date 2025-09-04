@@ -1,0 +1,435 @@
+
+:root {
+    --primary-color: #5d4037;
+    --secondary-color: #8d6e63;
+    --accent-color: #e65100;
+    --text-color-light: #f5f5f5;
+    --text-color-dark: #212121;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--text-color-light);
+    color: var(--text-color-dark);
+    overflow-x: hidden;
+    background-image: url('https://www.barniescoffee.com/cdn/shop/articles/bar-1869656_1920.jpg?v=1660683986');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Message Box Styling */
+.message-box {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem 2rem;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+}
+
+.message-box.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* New Header */
+/* Header and Navigation */
+header {
+    background-color: var(--light-bg);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    vertical-align: middle;
+}   
+
+.nav-links {
+    color: whitesmoke;
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #b85c38;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+}
+
+.auth-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.auth-links a {
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.auth-links a:hover {
+    background-color: #b85c38;
+    border-color: #b85c38;
+    color: whitesmoke;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--light-bg);
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+}
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #515151d1;
+    min-width: 160px;
+    border: 1px solid rgba(0, 0, 0, 0.555);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+    padding: 10px 0;
+    top: 100%; /* Position below the link */
+    left: 0;
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f3f3f3;
+    border-radius: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Header */
+header {
+    height: 100px;
+    max-width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100; /* Use a value higher than any other content */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgb(112, 92, 92);
+    border-bottom: 1px solid #beb6b6;
+}
+
+.logo {
+    margin-top: 8px;
+    display: flex;
+    font-weight: 700;
+    font-size: 22px;
+}
+.logo img {
+    width: 55px;
+    height: 55px;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.logo span {
+    color: #b85c38;
+}
+
+nav {
+    font-size: 17px;
+    border-radius: 10px;
+    background: rgb(112, 92, 92);
+    padding: 10px 20px;
+}
+.menu {
+    color: white;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.menu > li {
+    border-radius: 5px;
+    color: white;
+    position: relative;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.menu li:hover > a {
+    color: #b85c38;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgb(122, 115, 115);
+    border: 1px solid #ddd;
+    min-width: 180px;
+    display: none;
+    border-radius: 8px;
+    flex-direction: column;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+
+.dropdown-menu li {
+    position: relative;
+}
+
+.dropdown-menu a {
+    padding: 10px 15px;
+    display: block;
+    white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+    border-radius: 8px;
+    background: #f3f3f3;
+}
+
+/* Show on hover */
+.dropdown:hover > .dropdown-menu {
+    display: flex;
+}
+
+/* Nested submenu (flyout) */
+.dropdown-sub .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-left: 1px;
+}
+
+.dropdown-sub:hover > .dropdown-menu {
+    display: flex;
+}
+
+/* Header Actions */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+.header-actions .login {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 17px;
+}
+.header-actions .cart {
+    font-size: 22px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Main Cart Section */
+.cart-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+}
+
+.cart-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cart-card {
+    background-color: rgba(53, 52, 52, 0.637);
+    color: white;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    width: 100%;
+    max-width: 800px;
+    z-index: 1;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item-details {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-details img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.cart-totals {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.box {
+    width: 170px;
+    height: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 280px;
+    background-color: #393434;
+}
+
+.box:hover {
+    background-color: #f7f03a97;
+}
+/* Footer */
+footer {
+    background: rgb(78, 73, 73);/* Main footer background color from image */
+}
+
+.footer-content1 {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.app-store-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s;
+}
+.app-store-button:hover {
+    background-color: #555;
+}
+
+/* payment QR code */
+#qrcode-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.payment{
+    background-color: #55555583;
+}
